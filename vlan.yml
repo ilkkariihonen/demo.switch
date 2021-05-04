@@ -1,6 +1,16 @@
 - hosts: all
   collections:
     - arubanetworks.aos_switch
+  vars:
+    ansible_connection: network_cli
+  tasks:
+    - name: Execute show run on the switch
+      arubaoss_command:
+        commands: ['show run']
+ 
+- hosts: all
+  collections:
+    - arubanetworks.aos_switch
   tasks:
     - name: Create VLAN 300
       arubaoss_vlan:

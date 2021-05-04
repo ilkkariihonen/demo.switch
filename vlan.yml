@@ -1,4 +1,4 @@
-- hosts: switch1
+- hosts: all
   tasks:
     - name: Create VLAN 300
       arubaoss_vlan:

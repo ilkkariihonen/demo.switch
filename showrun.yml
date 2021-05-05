@@ -5,7 +5,6 @@
   vars:
     ansible_connection: network_cli
   tasks:
-    - include: project_update.yml
     - name: Execute show run on the switch
       arubaoss_command:
         commands: ['show run']

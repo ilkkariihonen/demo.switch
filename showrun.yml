@@ -5,6 +5,8 @@
   vars:
     ansible_connection: network_cli
   tasks:
+    - name: Install Netapp Collection from Ansible Galaxy
+      shell: ansible-galaxy collection install arubanetworks.aos_switch
     - name: Execute show run on the switch
       arubaoss_command:
         commands: ['show run']

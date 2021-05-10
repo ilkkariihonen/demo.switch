@@ -1,0 +1,13 @@
+- hosts: all
+  gather_facts: no
+  collections:
+    - arubanetworks.aos_switch
+  vars:
+    ansible_connection: network_cli
+  tasks:
+    - name: Execute {{ command_variable }} on the switch
+      arubaoss_command:
+        commands: ['{{ command_variable }}']
+      register: out
+
+    - debug: var=out.stdout_lines
